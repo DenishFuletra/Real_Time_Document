@@ -6,7 +6,7 @@ import axios from 'axios';
 const DocumentEditor = () => {
   const { id } = useParams();
   const [content, setContent] = useState('');
-  const socket = io('https://real-time-document.onrender.com', {
+  const socket = io('wss://real-time-document.onrender.com', {
     auth: {
       token: localStorage.getItem('token')
     }
