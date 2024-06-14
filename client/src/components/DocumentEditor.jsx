@@ -6,7 +6,7 @@ import axios from 'axios';
 const DocumentEditor = () => {
   const { id } = useParams();
   const [content, setContent] = useState('');
-  const socket = io('http://localhost:7300', {
+  const socket = io('https://real-time-document.onrender.com', {
     auth: {
       token: localStorage.getItem('token')
     }
@@ -27,7 +27,7 @@ const DocumentEditor = () => {
   useEffect(() => {
     const fetchDocument = async () => {
       try {
-        const response = await axios.get(`http://localhost:7300/api/getDocument/${id}`, {
+        const response = await axios.get(`https://real-time-document.onrender.com/api/getDocument/${id}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
