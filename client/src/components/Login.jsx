@@ -10,10 +10,10 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://real-time-document.onrender.com/public/user/login', { email, password });
+      const response = await axios.post('http://localhost:7300/public/user/login', { email, password });
       console.log('Loginresponse', response);
       localStorage.setItem('token', response.data.data.token);
-      navigate('/documents/666c7523066eb924a7ec70bd'); // Redirect to a document for simplicity
+      navigate('/documents/666c7523066eb924a7ec70bd');
     } catch (error) {
       console.error('Login failed', error);
     }

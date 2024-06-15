@@ -18,7 +18,7 @@ interface CustomSocket extends Socket {
 
 const io = socketIo(server, {
     cors: {
-        origin: 'https://real-time-document.vercel.app',
+        origin: 'http://127.0.0.1:5173',
         methods: ['GET', 'POST'],
         credentials: true
     }
